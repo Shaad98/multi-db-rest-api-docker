@@ -1,0 +1,33 @@
+version: "3.8"
+services:
+  backend:
+    # build: .
+    build: shaad98/spring-boot-rest-api
+    container_name: backend
+    ports:
+      - 8080:8080
+    environment:
+      - DB_HOST_SQL=postgres
+      - DB_HOST_NOSQL=mongodb
+      - DB_NAME=workdb
+      - DB_PASSWORD=root
+    depends_on:
+      - postgres
+      - mongodb
+      
+  
+  postgres:
+    image: postgres
+    container_name: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+  
+  mongodb:
+    image: mongodb
+    container_name: mongodb
+    ports:
+      - 27017:27017
+  
