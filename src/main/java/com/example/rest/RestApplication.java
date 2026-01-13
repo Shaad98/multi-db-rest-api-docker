@@ -5,8 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
-@EnableJpaRepositories(basePackages = "com.example.rest.repositories.postgres")
-@EnableMongoRepositories(basePackages = "com.example.rest.repositories.mongodb")
+@EnableJpaRepositories(basePackages = "com.example.rest.repository.postgres")
+@EnableMongoRepositories(basePackages = "com.example.rest.repository.mongodb")
 @SpringBootApplication
 public class RestApplication {
 

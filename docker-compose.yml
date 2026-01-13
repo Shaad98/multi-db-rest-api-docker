@@ -14,7 +14,7 @@ services:
     depends_on:
       - postgres
       - mongodb
-      
+    
   
   postgres:
     image: postgres
@@ -31,3 +31,8 @@ services:
     ports:
       - 27017:27017
   
+    # environment:
+    #   - DB_HOST_SQL=${DB_HOST_SQL:-postgres}
+    #   - DB_HOST_NOSQL=${DB_HOST_NOSQL:-mongodb}
+    #   - DB_NAME=${DB_NAME:-workdb}
+    #   - DB_PASSWORD=${DB_PASSWORD:-root}
